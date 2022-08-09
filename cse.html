@@ -26,7 +26,7 @@
     />
   </head>
 
-  <body ng-controller="gpaCtrl" ng-init="updateGPA()" oncontextmenu="return false;">
+  <body ng-controller="gpaCtrl" ng-init="updateGPA()">
     <div class="loader blue-grey darken-4">
       <div class="progress blue-grey darken-4">
         <div class="indeterminate indigo"></div>
@@ -47,12 +47,9 @@
               class="brand-logo GPA center"
               title="{{ myGPA | number : 2 }}"
             >
-              GPA : {{ myGPA | number : 4 }}
+              CGPA : {{ myGPA | number : 4 }}
             </div>
 
-            <a data-target="slide-out" class="right sidenav-trigger">
-              <i class="material-icons">menu</i>
-            </a>
 
             <button
               class="
@@ -88,7 +85,7 @@
                     class="badge blue white-text tooltipped"
                     data-position="bottom"
                     data-tooltip="Year {{z.year}} GPA"
-                    >{{ z.yearGPA ? z.yearGPA : 0 | number:2 }}</span
+                    >{{ z.yearGPA ? z.yearGPA : 0 | number:3 }}</span
                   >
                 </a>
               </li>
@@ -103,7 +100,7 @@
               <h6 class="">
                 Credits : {{ s.semesterCredit }} / {{ s.totalSemesterCredit }}
                 <span style="float: right"
-                  >GPA: {{ s.semesterGPA | number : 2 }}</span
+                  >GPA: {{ s.semesterGPA | number : 4 }}</span
                 >
               </h6>
               <div
